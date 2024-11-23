@@ -7,6 +7,8 @@ import React from 'react'
 import { useGraph } from '@react-three/fiber'
 import { useGLTF, useAnimations } from '@react-three/drei'
 import { SkeletonUtils } from 'three-stdlib'
+import { useSnapshot } from 'valtio'
+import state from '../store'
 
 export function Model(props) {
   const group = React.useRef()
@@ -14,10 +16,15 @@ export function Model(props) {
   const clone = React.useMemo(() => SkeletonUtils.clone(scene), [scene])
   const { nodes, materials } = useGraph(clone)
   const { actions } = useAnimations(animations, group)
+  const snap = useSnapshot(state)
+
+  // Apply the color from the state to the material
+  materials['default'].color.set(snap.avatarColor)
+
   return (
     <group ref={group} {...props} dispose={null}>
       <group name="Scene">
-        <group name="Armature" position={[0, 0, 0]} scale={1}>
+        <group name="Armature" position={[0, 0.5, 0]} scale={1}>
           <primitive object={nodes.Bone} />
           <primitive object={nodes.Bone007} />
           <primitive object={nodes.Bone008} />

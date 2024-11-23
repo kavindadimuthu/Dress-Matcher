@@ -10,7 +10,7 @@ import '../App.css';
 import { Model } from '../canvas/HumanCharacter';
 import { ShirtModel } from '../canvas/ShirtModel';
 
-function Page1() {
+function Page2() {
   
   const snap = useSnapshot(state);
 
@@ -27,4 +27,4 @@ function Page1() {
   )
 }
 
-export default Page1
+export default Page2

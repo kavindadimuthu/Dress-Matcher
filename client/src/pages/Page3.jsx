@@ -4,14 +4,14 @@ import { Canvas } from '@react-three/fiber';
 
 import state from '../store';
 import { Suspense } from 'react';
-import { OrbitControls } from '@react-three/drei';
+import { Environment, OrbitControls } from '@react-three/drei';
 
 import '../App.css';
 import { Model } from '../canvas/HumanCharacter';
 import { ShirtModel } from '../canvas/ShirtModel';
 import { DressedModel } from '../canvas/DressedModel';
 
-function Page1() {
+function Page3() {
   
   const snap = useSnapshot(state);
 
@@ -19,6 +19,7 @@ function Page1() {
     <>
       <Canvas>
         <ambientLight />
+        <Environment preset="sunset" />
         <OrbitControls />
         <Suspense fallback={null}>
           <DressedModel />
@@ -28,4 +29,4 @@ function Page1() {
   )
 }
 
-export default Page1
+export default Page3

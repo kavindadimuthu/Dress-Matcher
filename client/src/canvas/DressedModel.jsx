@@ -13,7 +13,7 @@ export function DressedModel(props) {
   const clone = React.useMemo(() => SkeletonUtils.clone(scene), [scene])
   const { nodes, materials } = useGraph(clone)
   return (
-    <group {...props} dispose={null}>
+    <group {...props} dispose={null} position={[0, -2.1, 0]} scale={2.5}>
       <primitive object={nodes.Hips} />
       <skinnedMesh geometry={nodes.EyeLeft.geometry} material={materials.Wolf3D_Eye} skeleton={nodes.EyeLeft.skeleton} />
       <skinnedMesh geometry={nodes.EyeRight.geometry} material={materials.Wolf3D_Eye} skeleton={nodes.EyeRight.skeleton} />

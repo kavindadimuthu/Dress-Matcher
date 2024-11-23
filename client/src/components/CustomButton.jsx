@@ -43,8 +43,8 @@ export function ColorButton({ color }) {
       className="w-8 h-8 rounded-full border border-gray-300"
       style={{ backgroundColor: color }}
       onClick={() => (
-        state.dressColor = color,
-        console.log(state.dressColor)
+        state.avatarColor = color,
+        console.log(state.avatarColor)
       )}
     />
   );

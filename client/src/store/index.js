@@ -8,7 +8,9 @@ const state = proxy({
   logoDecal: './logos/react.png',
   fullDecal: './logos//threejs.png',
   avatarColor: '#f1c27d',
-  dressColor: '#f1c27d',
+  // dressColor: '#f1c27d',
+  // shirtColor: '#f1c27d',
+  // dressedModelColor: '#f1c27d',
 });
 
 export default state;
