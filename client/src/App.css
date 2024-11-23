@@ -1,0 +1,6 @@
+canvas{
+    height: 100vh!important;
+    /* background-color: grey; */
+    background-image: url('/public/bg-image.jpg');
+    
+}
